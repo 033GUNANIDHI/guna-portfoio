@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: #eaeaea;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  z-index: 1000;
+}
+
+.logo {
+  color: crimson;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: crimson;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), #000),
+              url("https://images.unsplash.com/photo-1524985069026-dd778a71c7b4");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  margin: 15px 0 30px;
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: crimson;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid crimson;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section.dark {
+  background: #111;
+}
+
+/* VIDEO */
+.video-box {
+  max-width: 800px;
+  margin: auto;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  text-align: center;
+  padding: 20px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .video-box iframe {
+    height: 250px;
+  }
+}
+/* POSTER GRID */
+/* WORKS GRID */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* POSTER CARD */
+.poster-card {
+  position: relative;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+  transition: transform 0.4s ease;
+  text-decoration: none;
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* NETFLIX HOVER */
+.poster-card:hover {
+  transform: scale(1.08);
+  z-index: 5;
+}
+
+.poster-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.55);
+}
+
+/* INFO */
+.poster-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.poster-card:hover .poster-info {
+  opacity: 1;
+}
+/* ABOUT IMAGE */
+.about-img {
+  width: 180px;              /* medium size */
+  height: 180px;
+  border-radius: 50%;        /* round shape */
+  object-fit: cover;
+  margin: 25px auto;
+  display: block;
+
+  /* cinematic look */
+  border: 4px solid crimson;
+  box-shadow: 0 0 40px rgba(220, 20, 60, 0.6);
+
+  /* animation */
+  animation: fadeZoom 1.5s ease forwards;
+}
+
+/* FADE + ZOOM */
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.about-img:hover {
+  box-shadow: 0 0 60px rgba(220, 20, 60, 0.9);
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+/* FAVORITE MOVIES GRID */
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.fav-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  transform: scale(0.9);
+  opacity: 0;
+  animation: favFade 1s ease forwards;
+}
+
+/* IMAGE */
+.fav-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* NETFLIX STYLE HOVER */
+.fav-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.5);
+}
+
+/* MOVIE NAME */
+.fav-card span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fav-card:hover span {
+  opacity: 1;
+}
+
+/* FADE + ZOOM ANIMATION */
+@keyframes favFade {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* WORKS KNOWING TITLE */
+.skill-title {
+  font-size: 2.3rem;
+  letter-spacing: 4px;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  animation: titleReveal 1.3s ease forwards;
+}
+
+.skill-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  width: 70px;
+  height: 3px;
+  background: crimson;
+  transform: translateX(-50%);
+}
+
+/* SKILL GRID */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* SKILL CARD */
+.skill-card {
+  background: #0b0b0b;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: skillFade 1s ease forwards;
+}
+
+.skill-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* NETFLIX STYLE HOVER */
+.skill-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.5);
+}
+
+.skill-card h3 {
+  padding: 18px;
+  letter-spacing: 2px;
+  color: crimson;
+}
+
+/* FADE ANIMATION */
+@keyframes skillFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
