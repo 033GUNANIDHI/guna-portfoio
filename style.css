@@ -357,3 +357,84 @@ footer {
     transform: translateY(0);
   }
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* =========================
+   MOBILE VIEW FIX PACK
+========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 12px 6%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* HERO */
+  .hero {
+    height: 90vh;
+    padding-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 60px 6%;
+  }
+
+  /* ABOUT IMAGE */
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* WORKS POSTERS */
+  .poster-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 18px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .poster-card {
+    min-width: 200px;
+    height: 300px;
+    scroll-snap-align: center;
+  }
+
+  /* FAVORITE MOVIES */
+  .fav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fav-card img {
+    height: 200px;
+  }
+
+  /* WORKS KNOWING */
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
